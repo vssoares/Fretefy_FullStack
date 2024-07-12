@@ -12,12 +12,10 @@ Boa sorte!
 
 # Como começar?
 
-1. Faça o fork do projeto `https://github.com/glauciowathier/fretefy-fullstack-test.git`
+1. Faça o fork do projeto `https://github.com/christiansaddock/Fretefy_FullStack`
 2. Faça sua implementação
 3. Suba seu código no fork criado
 4. Nos avise sobre a finalização da implementação, preferencialmente por email: christian.saddock@fretefy.com.br 🚀
-
-Para avisar, você pode sinalizar no Discord ou enviar um e-mail para glaucio.wathier@fretefy.com.br
 
 # Atividade
 
