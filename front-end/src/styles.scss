@@ -246,9 +246,9 @@ label {
 }
 
 input.control:focus+label,
-input.control:valid+label,
+input.control.has-value+label,
 select.control:focus+label,
-select.control:not([value=""])+label {
+select.control.has-value+label {
   top: 0;
   font-size: 14px;
   color: #003250;
