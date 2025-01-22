@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { UntypedFormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { SelectItems } from 'src/core/types/types';
 
@@ -9,7 +9,7 @@ import { SelectItems } from 'src/core/types/types';
   styleUrls: ['./select.component.scss']
 })
 export class SelectComponent implements OnInit {
-  @Input() control: FormControl;
+  @Input() control: UntypedFormControl;
   @Input() label: string;
   @Input() itens: SelectItems[] = []
 

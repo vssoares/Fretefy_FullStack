@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormArray, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { fadeAnimation } from 'src/core/animations';
@@ -18,19 +18,19 @@ export class RegiaoComponent implements OnInit {
   idRegiao: string;
   regiao: Regiao;
 
-  formCadastro: FormGroup;
+  formCadastro: UntypedFormGroup;
   textoErro: string;
 
   cidades: SelectItems[] = [];
   subs: Subscription[] = [];
 
   get locaisFormArray() {
-    return this.formCadastro.get('locais') as FormArray;
+    return this.formCadastro.get('locais') as UntypedFormArray;
   }
 
   constructor(
     private activeRoute: ActivatedRoute,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private gestaoRegioesService: GestaoRegioesService,
   ) {
