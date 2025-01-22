@@ -71,18 +71,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "fretefy-fullstack:build"
+            "buildTarget": "fretefy-fullstack:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "fretefy-fullstack:build:production"
+              "buildTarget": "fretefy-fullstack:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "fretefy-fullstack:build"
+            "buildTarget": "fretefy-fullstack:build"
           }
         },
         "test": {
