@@ -1,10 +1,293 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("./assets/css/grid.scss");
+
+
 * {
-    font-family: Nunito Sans,Segoe UI,Helvetica Neue,Arial,sans-serif;
+  font-family: Poppins, Segoe UI, Helvetica Neue, Arial, sans-serif;
+  box-sizing: border-box;
 }
 
-html, body {
-    padding: 0;
-    margin: 0;
-    background-color: #dfe6e9;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #dfe6e9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #003250;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+}
+
+
+
+
+.text-center {
+  text-align: center !important;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e7ecef;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .card-footer button{
+    width: 100%;
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-rounded {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  border-radius: 50px;
+}
+
+.btn-primary {
+  background-color: #003250;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #00213a;
+}
+
+.btn-secondary {
+  background-color: #e7ecef;
+  color: #003250;
+}
+
+.btn-secondary:hover {
+  background-color: #dfe6e9;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.text-primary {
+  color: #003250;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: #e7ecef;
+  color: #003250;
+  padding: 4px 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-button:hover {
+  background-color: #dfe6e9;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  z-index: 1000;
+  min-width: 110px;
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 5px;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: #003250;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    right: 0;
+  }
+}
+
+.rounded-full {
+  border-radius: 50%;
+}
+
+
+.form-group {
+  position: relative;
+  margin: 20px 0;
+}
+
+input.control,
+select.control {
+  transition: all 0.3s;
+  font-size: 16px;
+  padding: 10px 15px;
+  display: block;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  color: #003250;
+}
+
+label {
+  position: absolute;
+  top: 48%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #636467;
+  transition: 0.3s ease;
+  pointer-events: none;
+  font-weight: 500;
+}
+
+input.control:focus+label,
+input.control:valid+label,
+select.control:focus+label,
+select.control:not([value=""])+label {
+  top: 0;
+  font-size: 14px;
+  color: #003250;
+  background: white;
+  padding: 0 5px;
+}
+
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+  border-color: #dc3545;
+}
+
+input.ng-valid.ng-touched,
+select.ng-valid.ng-touched {
+  border-color: #28a745;
+}
+
+.clear-btn {
+  position: absolute;
+  top: 58%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.clear-btn:hover {
+  color: #333;
+}
+
+.clear-btn span {
+  font-size: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .mobile-hidden{
+    display: none;
+  }
 }

@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "api": "npx json-server --watch src/api/db.json --port 3333",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -19,8 +20,11 @@
     "@angular/platform-browser": "~10.2.0",
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",
+    "file-saver": "^2.0.5",
+    "json-server": "0.17.4",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "xlsx": "^0.18.5",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

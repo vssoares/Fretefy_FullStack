@@ -1,27 +1,42 @@
-# FretefyFullstack
+# Fretefy Teste Técnico - Front-end
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Este projeto utiliza uma **Fake API** criada com o **JSON Server** para simular o backend.
 
-## Development server
+## Como funciona
+Deixei o Json Server para facilitar a busca e edição dos dados
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+src/api/db.json
+```
 
-## Code scaffolding
+## Instalação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```bash
+npm install -g json-server@0.17.4
+```
 
-## Build
+## Instruções para rodar a Fake API
+Você pode executar o servidor JSON Server de duas maneiras:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### 1. Usando um script npm
+```bash
+npm run api
+```
 
-## Running unit tests
+Esse comando está configurado no arquivo `package.json` e executa:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npx json-server --watch src/api/db.json --port 3333
+```
 
-## Running end-to-end tests
+### 2. Executando diretamente o JSON Server
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```bash
+npx json-server --watch src/api/db.json --port 3333
+```
 
-## Further help
+Depois de rodar a API, ela estará disponível no seguinte endereço:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+http://localhost:3333
+```

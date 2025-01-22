@@ -1,0 +1,14 @@
+<div class="form-group">
+  <select [formControl]="control" class="control" (change)="onChangeSelect()">
+    <option class="cursor-pointer" *ngFor="let item of itens" [value]="item.value">
+      {{ item.label }}
+    </option>
+    <option disabled value="" selected>Selecione uma opção</option>
+  </select>
+  <label>{{label}}</label>
+  <button type="button" class="clear-btn" *ngIf="control.value" (click)="clearSelect()">
+    <span class="material-symbols-outlined">
+      close
+    </span>
+  </button>
+</div>

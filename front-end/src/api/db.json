@@ -1,0 +1,140 @@
+{
+  "regioes": [
+    {
+      "id": 1,
+      "nome": "Sul",
+      "ativa": true,
+      "locais": [
+        {
+          "cidade": "8"
+        },
+        {
+          "cidade": "9"
+        },
+        {
+          "cidade": "20"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Sudeste",
+      "ativa": true,
+      "locais": [
+        {
+          "cidade": "13"
+        }
+      ]
+    }
+  ],
+  "cidades": [
+    {
+      "value": 1,
+      "label": "Aracaju / SE"
+    },
+    {
+      "value": 2,
+      "label": "Belém / PA"
+    },
+    {
+      "value": 3,
+      "label": "Belo Horizonte / MG"
+    },
+    {
+      "value": 4,
+      "label": "Boa Vista / RR"
+    },
+    {
+      "value": 5,
+      "label": "Brasília / DF"
+    },
+    {
+      "value": 6,
+      "label": "Campo Grande / MS"
+    },
+    {
+      "value": 7,
+      "label": "Cuiabá / MT"
+    },
+    {
+      "value": 8,
+      "label": "Curitiba / PR"
+    },
+    {
+      "value": 9,
+      "label": "Florianópolis / SC"
+    },
+    {
+      "value": 10,
+      "label": "Fortaleza / CE"
+    },
+    {
+      "value": 11,
+      "label": "Goiânia / GO"
+    },
+    {
+      "value": 12,
+      "label": "São Luís / MA"
+    },
+    {
+      "value": 13,
+      "label": "São Paulo / SP"
+    },
+    {
+      "value": 14,
+      "label": "Salvador / BA"
+    },
+    {
+      "value": 15,
+      "label": "Rio de Janeiro / RJ"
+    },
+    {
+      "value": 16,
+      "label": "Maceió / AL"
+    },
+    {
+      "value": 17,
+      "label": "Manaus / AM"
+    },
+    {
+      "value": 18,
+      "label": "Natal / RN"
+    },
+    {
+      "value": 19,
+      "label": "Palmas / TO"
+    },
+    {
+      "value": 20,
+      "label": "Porto Alegre / RS"
+    },
+    {
+      "value": 21,
+      "label": "Porto Velho / RO"
+    },
+    {
+      "value": 22,
+      "label": "Recife / PE"
+    },
+    {
+      "value": 23,
+      "label": "Teresina / PI"
+    },
+    {
+      "value": 24,
+      "label": "Vitória / ES"
+    },
+    {
+      "value": 25,
+      "label": "João Pessoa / PB"
+    },
+    {
+      "value": 26,
+      "label": "Macapá / AP"
+    },
+    {
+      "value": 27,
+      "label": "Rio Branco / AC"
+    }
+  ]
+}

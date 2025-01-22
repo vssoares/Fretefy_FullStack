@@ -1,3 +1,43 @@
-<p>
-  home works!
-</p>
+<div class="container mt-3">
+  <div class="card">
+    <app-table titulo="Listagem de Regiões" [colunas]="colunas" [data]="regioes$ | async" [acoesHeader]="acoesHeader"
+      [acoes]="acoes"></app-table>
+  </div>
+</div>
+
+<ng-template #acoesHeader>
+  <div class="flex gap-2">
+    <button class="btn btn-primary" (click)="exportarRegioes()">
+      <span class="material-symbols-outlined" style="font-size: 20px;">
+        get_app
+      </span>
+      <span class="mobile-hidden">Exportar</span>
+    </button>
+
+    <button [routerLink]="['/regiao/cadastro']" class="btn btn-success">
+      <span class="material-symbols-outlined" style="font-size: 20px;">
+        add
+      </span>
+      <span class="mobile-hidden">Cadastrar</span>
+    </button>
+  </div>
+</ng-template>
+
+
+<ng-template #acoes let-data>
+  <div class="dropdown">
+    <button class="dropdown-button">
+      <span class="material-symbols-outlined">
+        more_vert
+      </span>
+    </button>
+    <div class="dropdown-menu cursor-pointer">
+      <a *ngIf="data?.ativa" [routerLink]="['/regiao/' + data?.id]" class="dropdown-item">Editar</a>
+
+      <a (click)="toggleRegiao(data, true)" *ngIf="!data?.ativa" class="dropdown-item">Ativar</a>
+      <a (click)="toggleRegiao(data, false)" *ngIf="data?.ativa" class="dropdown-item">Desativar</a>
+
+      <a *ngIf="data?.ativa" (click)="excluirRegiao(data)" class="dropdown-item">Excluir</a>
+    </div>
+  </div>
+</ng-template>
