@@ -16,7 +16,7 @@
     {
       "id": 2,
       "nome": "Sudeste",
-      "ativa": false,
+      "ativa": true,
       "locais": [
         {
           "cidade": "13"
@@ -45,7 +45,7 @@
     {
       "id": 4,
       "nome": "Norte",
-      "ativa": true,
+      "ativa": false,
       "locais": [
         {
           "cidade": "3"

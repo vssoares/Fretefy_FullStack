@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListagemComponent } from './listagem/listagem.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { RegiaoGuard } from 'src/app/shared/guards/regiao-desativada.guard';
+import { RegiaoResolverService } from 'src/app/shared/resolvers/regiao.resolver';
 
 const routes: Routes = [
   {
@@ -30,8 +31,11 @@ const routes: Routes = [
       {
         path: ':id',
         component: CadastroComponent,
-        canActivate: [RegiaoGuard],
-        data: { animation: 'RegiaoCadastro' }
+        // canActivate: [RegiaoGuard],
+        data: { animation: 'RegiaoCadastro' },
+        resolve: {
+          regiao: RegiaoResolverService
+        }
       },
       {
         path: '**',

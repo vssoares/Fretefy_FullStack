@@ -52,6 +52,19 @@ export class CadastroComponent implements OnInit {
       ativa: [true, [Validators.required]],
       locais: this.formBuilder.array([]),
     })
+
+    // Caso seja edição, preenche os campos com os dados da região vindos do resolver
+    this.activeRoute.data.subscribe((response: any) => {
+      if (Object.keys(response).length) {
+        this.regiao = response?.regiao;
+        this.formCadastro.patchValue(this.regiao);
+        this.regiao?.locais.forEach((local) => {
+          this.adicionarLocal();
+          this.locaisFormArray.at(this.locaisFormArray.length - 1).patchValue(local);
+        })
+      }
+    });
+
   }
 
   ngOnInit() {
@@ -60,10 +73,6 @@ export class CadastroComponent implements OnInit {
       this.adicionarLocal();
 
     this.buscarCidades();
-
-    if (this.idRegiao) {
-      this.buscarRegiao(this.idRegiao);
-    }
   }
 
   onChangeCidade(control) {
@@ -87,25 +96,6 @@ export class CadastroComponent implements OnInit {
 
   removerLocal(index: number) {
     this.locaisFormArray.removeAt(index);
-  }
-
-  buscarRegiao(id: string) {
-    this.subs.push(
-      this.gestaoRegioesService.buscarRegiao(id).subscribe({
-        next: (regiao: Regiao) => {
-          this.regiao = regiao;
-          this.formCadastro.patchValue(regiao);
-          regiao?.locais.forEach((local) => {
-            this.adicionarLocal();
-            this.locaisFormArray.at(this.locaisFormArray.length - 1).patchValue(local);
-          })
-        },
-        error: () => {
-          alert('Região não encontrada!');
-          this.router.navigate(['/gestao-regioes/listagem']);
-        }
-      })
-    )
   }
 
   buscarCidades() {
