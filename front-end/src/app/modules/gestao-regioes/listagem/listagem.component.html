@@ -1,0 +1,44 @@
+<div class="container mt-3">
+  <div class="card">
+    <app-table titulo="Listagem de Regiões" [colunas]="colunas" [data]="regioes$ | async" [acoesHeader]="acoesHeader"
+      [acoes]="acoes"></app-table>
+  </div>
+</div>
+
+<ng-template #acoesHeader>
+  <div class="flex gap-2">
+    <button class="btn btn-primary" (click)="exportarRegioes()">
+      <span class="material-symbols-outlined" style="font-size: 20px;">
+        get_app
+      </span>
+      <span class="mobile-hidden">Exportar</span>
+    </button>
+
+    <a [routerLink]="['/gestao-regioes/regiao/cadastro']" class="btn btn-success">
+      <span class="material-symbols-outlined" style="font-size: 20px;">
+        add
+      </span>
+      <span class="mobile-hidden">Cadastrar</span>
+    </a>
+  </div>
+</ng-template>
+
+
+<ng-template #acoes let-data>
+  <div class="dropdown">
+    <button class="dropdown-button">
+      <span class="material-symbols-outlined">
+        more_vert
+      </span>
+    </button>
+    <div class="dropdown-menu cursor-pointer">
+      @if (data?.ativa) {
+        <a [routerLink]="['/gestao-regioes/regiao/' + data?.id]" class="dropdown-item">Editar</a>
+        <a (click)="toggleRegiao(data, false)" class="dropdown-item">Desativar</a>
+        <a (click)="excluirRegiao(data)" class="dropdown-item">Excluir</a>
+      }@else {
+        <a (click)="toggleRegiao(data, true)" class="dropdown-item">Ativar</a>
+      }
+    </div>
+  </div>
+</ng-template>

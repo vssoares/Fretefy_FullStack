@@ -1,4 +1,6 @@
-<app-toolbar></app-toolbar>
-<div [@routeAnimation]="prepareRoute(outlet)">
-  <router-outlet #outlet="outlet"></router-outlet>
+<div style="padding-top: 60px;">
+  <app-toolbar></app-toolbar>
+  <div [@routeAnimation]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
 </div>

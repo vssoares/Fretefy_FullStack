@@ -1,0 +1,17 @@
+<div class="form-group">
+  <select [formControl]="control" class="control" (change)="onChangeSelect()">
+    @for (item of itens; track $index) {
+      <option class="cursor-pointer" [value]="item.value">
+        {{ item.label }}
+      </option>
+    }
+  </select>
+  <label>{{label}}</label>
+  @if (control.value) {
+    <button type="button" class="clear-btn" (click)="clearSelect()">
+      <span class="material-symbols-outlined">
+        close
+      </span>
+    </button>
+  }
+</div>

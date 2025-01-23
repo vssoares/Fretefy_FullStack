@@ -3,26 +3,58 @@
     {
       "id": 1,
       "nome": "Sul",
-      "ativa": true,
+      "ativa": false,
       "locais": [
         {
-          "cidade": "8"
+          "cidade": "6"
         },
         {
-          "cidade": "9"
-        },
-        {
-          "cidade": "20"
+          "cidade": "2"
         }
       ]
     },
     {
       "id": 2,
       "nome": "Sudeste",
-      "ativa": true,
+      "ativa": false,
       "locais": [
         {
           "cidade": "13"
+        },
+        {
+          "cidade": "12"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Nordeste",
+      "ativa": true,
+      "locais": [
+        {
+          "cidade": "1"
+        },
+        {
+          "cidade": "2"
+        },
+        {
+          "cidade": "15"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "Norte",
+      "ativa": true,
+      "locais": [
+        {
+          "cidade": "3"
+        },
+        {
+          "cidade": "2"
+        },
+        {
+          "cidade": "16"
         }
       ]
     }

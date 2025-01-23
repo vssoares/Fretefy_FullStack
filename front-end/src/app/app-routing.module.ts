@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './modules/home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
+
   {
     path: '',
     redirectTo: '/home',
@@ -14,14 +15,14 @@ const routes: Routes = [
     data: { animation: 'Home' }
   },
   {
-    path: 'regiao',
-    loadChildren: () => import('./modules/regiao/regiao.module').then(m => m.RegiaoModule),
+    path: 'gestao-regioes',
+    loadChildren: () => import('./modules/gestao-regioes/gestao-regioes.module').then(m => m.GestaoRegioesModule),
     data: { animation: 'Regiao' }
   },
   {
     path: '**',
     redirectTo: '/home'
-  }
+  },
 ];
 
 @NgModule({

@@ -233,6 +233,9 @@ select.control {
   outline: none;
   color: #003250;
 }
+select {
+  cursor: pointer;
+}
 
 label {
   position: absolute;
@@ -245,10 +248,8 @@ label {
   font-weight: 500;
 }
 
-input.control:focus+label,
-input.control.has-value+label,
-select.control:focus+label,
-select.control.has-value+label {
+input.control+label,
+select.control+label {
   top: 0;
   font-size: 14px;
   color: #003250;
@@ -290,4 +291,24 @@ select.ng-valid.ng-touched {
   .mobile-hidden{
     display: none;
   }
+}
+
+
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #e7ecef;
+  color: #003250;
+  font-weight: 500;
+}
+
+.badge-success{
+  background-color: #28a745;
+  color: white;
+}
+
+.badge-danger{
+  background-color: #dc3545;
+  color: white;
 }

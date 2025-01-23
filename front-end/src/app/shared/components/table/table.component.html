@@ -1,0 +1,72 @@
+<div class="flex justify-between align-center flex-wrap mb-3">
+  <div>
+    <h2>{{titulo}}</h2>
+  </div>
+
+  @if (acoesHeader) {
+    <div>
+      <ng-container *ngTemplateOutlet="acoesHeader"></ng-container>
+    </div>
+  }
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      @for (coluna of colunas; track $index) {
+        <th>{{coluna.caption}}</th>
+      }
+      @if (acoes) {
+        <th class="text-center">Ações</th>
+      }
+    </tr>
+  </thead>
+  <tbody>
+    @for (row of data; track $index; let rowIndex = $index) {
+      <tr>
+        @for (coluna of colunas; track $index) {
+          <td class="vertical-align-center">
+
+            @if(coluna?.tipo == 'string') {
+              <div>
+                {{row[coluna.dataField]}}
+              </div>
+            }
+
+            @if (coluna?.tipo == 'boolean') {
+              <div>
+                @if (row[coluna.dataField]) {
+                  <span>Sim</span>
+                }@else {
+                  <span>Não</span>
+                }
+              </div>
+            }
+
+            @if(coluna?.tipo == 'ativaInativa') {
+              <div>
+                @if (row[coluna.dataField]) {
+                  <span class="badge badge-success">Ativa</span>
+                }@else {
+                  <span class="badge badge-danger">Inativa</span>
+                }
+              </div>
+            }
+
+          </td>
+        }
+        @if (acoes) {
+          <td class="text-center vertical-align-center">
+            <ng-container *ngTemplateOutlet="acoes; context: {$implicit: row, index: rowIndex}"></ng-container>
+          </td>
+        }
+      </tr>
+    }
+
+    @if (data?.length === 0 || !data) {
+      <tr>
+        <td colspan="3" class="text-center">Nenhum registro encontrado</td>
+      </tr>
+    }
+  </tbody>
+</table>

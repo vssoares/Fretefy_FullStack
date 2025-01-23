@@ -1,0 +1,31 @@
+pre {
+  background: #f4f4f4;
+  padding: 10px;
+  border-left: 3px solid #ccc;
+  overflow-x: auto;
+}
+
+code {
+  background: #f4f4f4;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+h1,
+h2,
+h3 {
+  color: #333;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+* {
+  font-size: 16px;
+}

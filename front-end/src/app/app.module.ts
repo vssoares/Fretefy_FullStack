@@ -4,21 +4,23 @@ import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http"
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeModule } from './modules/home/home.module';
-import { ToolbarModule } from './components/toolbar/toolbar.module';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
-  bootstrap: [AppComponent], imports: [BrowserModule,
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
-    HomeModule,
-    ToolbarModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    // standalones
+    ToolbarComponent
   ],
   providers: [provideHttpClient(withInterceptorsFromDi())]
 })

@@ -1,0 +1,7 @@
+<ul class="toolbar">
+  <li>
+    @for (item of links; track $index) {
+      <a [routerLink]="[item?.href]" routerLinkActive="active">{{item?.titulo}}</a>
+    }
+  </li>
+</ul>
